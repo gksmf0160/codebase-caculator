@@ -1,47 +1,77 @@
-import UIKit
+import Foundation
 
-//1. Int타입의 temperature를 입력받아, 온도가 25도 이상이면 "덥다", 그렇지 않으면 "춥다"를 반환하는 함수를 삼항 연산자를 사용하여 작성하세요.
-var temperature: Int = 26
-
-print(temperature >= 25 ? "덥다" : "춥다")
-//2. Int타입의 숫자를 입력받아, 그 숫자가 짝수인지 홀수인지 판별하는 함수를 작성하세요.
-var num: Int = 10
-
-print(num % 2 == 0 ? "짝수" : "홀수")
-//3. Int타입의 age를 입력받아, 나이가 19세 이상이면 true, 그렇지 않으면 false를 반환하는 함수를 작성하세요.
-var age: Int = 20
-
-print(age >= 19 ? true : false)
-//4. 두 개의 Double 타입 숫자 a와 b를 입력받아, a가 b보다 크면 true, 그렇지 않으면 false를 반환하는 함수를 작성하세요.
-var a: Double = 10.0
-var b: Double = 20.0
-
-print(a > b ? true : false)
-
-
-//5. isLoggedIn이라는 이름의 Bool 변수와 isAdmin 이름의 Bool 변수가 주어졌을 때, 사용자가 로그인되어 있고 동시에 관리자 권한을 가지고 있는지 확인하는 Bool 값을 반환하는 함수를 작성하세요.
-var isLoggedIn: Bool = true
-var isAdmin: Bool = false
-
-print(isLoggedIn && isAdmin)
-//6. String 타입의 문자열을 입력받아, 해당 문자열이 비어있으면 true, 비어있지 않으면 false를 반환하는 함수를 작성하세요. (Swift의 내장 isEmpty 속성을 사용하지 않고 직접 구현해 보세요.)
-func isStringEmpty(_ input: String) -> Bool {
-    return input.count == 0
+//1. Student 구조체가 있고, 이 구조체는 midtermScore라는 옵셔널 Int 타입의 속성을 가질 수 있습니다. 특정 학생의 중간고사 점수가 있다면 그 점수를 출력하고, 없다면 "점수 없음"을 출력하세요.
+struct Student {
+    var midtermScore: Int?
 }
 
-//7. Bool 타입의 success 변수를 입력받아, sucess가 true 이면 "작업 성공!"을 출력하고 true를 반환하며, false이면 "작업 실패!"를 출력하고 false를 반환하는 함수를 작성하세요.
-var Successs: Bool = true
-func func1(Successs: Bool) -> String {
-    if Successs == true {
-        return "작업 성공!"
-    }
-    else{
-            return "작업 실패!"
-        }
-    
+let student = Student(midtermScore: 85)
+
+if let score = student.midtermScore {
+    print("중간고사 점수: \(score)")
+} else {
+    print("점수 없음")
 }
 
-//8. password(String)를 입력받아, 비밀번호가 8자 이상이고 ! 문자를 포함하는지 여부를 Bool로 반환하는 함수를 작성하세요.
-func isValidPassword(_ password: String) -> Bool {
-    return password.count >= 8 && password.contains("!")
+//2. Book 클래스가 있고, 이 클래스는 title이라는 옵셔널 String 타입의 속성을 가집니다. 책의 제목이 있다면 그 제목의 길이를 출력하고, 없다면 "제목 없음"을 출력하세요.
+class Book {
+    var title: String?
+}
+
+let book = Book()
+book.title = "Swift Programming"
+
+if let title = book.title {
+    print("제목 길이: \(title.count)")
+} else {
+    print("제목 없음")
+}
+
+//3. User 구조체가 있고, 이 구조체는 email이라는 옵셔널 String 타입의 속성을 가집니다. 사용자의 이메일이 있다면 이메일에서 @ 기호 이후의 도메인 부분을 추출하여 출력하고, 이메일이 없다면 "이메일 없음"을 출력하세요.
+struct User {
+    var email: String?
+}
+
+let user = User(email: "hello@example.com")
+
+if let email = user.email,
+   let atIndex = email.firstIndex(of: "@") {
+    let domain = email[email.index(after: atIndex)...]
+    print("도메인: \(domain)")
+} else {
+    print("이메일 없음")
+}
+
+//4. Company 구조체는 Department라는 옵셔널 속성을 가집니다. Department는 managerName이라는 옵셔널 String 속성을 가집니다. 회사의 특정 부서에 책임자가 있다면 그 이름을 출력하고, 없다면 "책임자 없음"을 출력하세요.
+struct Department {
+    var managerName: String?
+}
+
+struct Company {
+    var department: Department?
+}
+
+let company = Company(department: Department(managerName: "김철수"))
+
+if let managerName = company.department?.managerName {
+    print("책임자: \(managerName)")
+} else {
+    print("책임자 없음")
+}
+
+//5. ParkingLot 구조체는 vehicles라는 옵셔널 [Car] 배열을 가집니다. Car 구조체는 licensePlate라는 옵셔널 String 속성을 가집니다. 주차장에 첫 번째 차량이 있고 그 차량에 번호판이 있다면 번호판을 출력하고, 그렇지 않다면 "차량 없음 또는 번호판 없음"을 출력하세요.
+struct Car {
+    var licensePlate: String?
+}
+
+struct ParkingLot {
+    var vehicles: [Car]?
+}
+
+let lot = ParkingLot(vehicles: [Car(licensePlate: "123가4567")])
+
+if let plate = lot.vehicles?.first?.licensePlate {
+    print("번호판: \(plate)")
+} else {
+    print("차량 없음 또는 번호판 없음")
 }
