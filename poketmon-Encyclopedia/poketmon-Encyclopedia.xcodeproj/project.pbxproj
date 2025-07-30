@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3DE0E3952E384ECD00B7ABE2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE0E3942E384ECD00B7ABE2 /* SnapKit */; };
+		3DE0E3F22E39DC3900B7ABE2 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE0E3F12E39DC3900B7ABE2 /* RxBlocking */; };
+		3DE0E3F62E39DC3900B7ABE2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE0E3F52E39DC3900B7ABE2 /* RxCocoa */; };
+		3DE0E3FA2E39DC3900B7ABE2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE0E3F92E39DC3900B7ABE2 /* RxRelay */; };
+		3DE0E4082E39E50700B7ABE2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE0E4072E39E50700B7ABE2 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +44,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE0E3FA2E39DC3900B7ABE2 /* RxRelay in Frameworks */,
+				3DE0E4082E39E50700B7ABE2 /* Kingfisher in Frameworks */,
 				3DE0E3952E384ECD00B7ABE2 /* SnapKit in Frameworks */,
+				3DE0E3F62E39DC3900B7ABE2 /* RxCocoa in Frameworks */,
+				3DE0E3F22E39DC3900B7ABE2 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +92,10 @@
 			name = "poketmon-Encyclopedia";
 			packageProductDependencies = (
 				3DE0E3942E384ECD00B7ABE2 /* SnapKit */,
+				3DE0E3F12E39DC3900B7ABE2 /* RxBlocking */,
+				3DE0E3F52E39DC3900B7ABE2 /* RxCocoa */,
+				3DE0E3F92E39DC3900B7ABE2 /* RxRelay */,
+				3DE0E4072E39E50700B7ABE2 /* Kingfisher */,
 			);
 			productName = "poketmon-Encyclopedia";
 			productReference = 3DE0E3782E384EB200B7ABE2 /* poketmon-Encyclopedia.app */;
@@ -115,6 +127,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				3DE0E3932E384ECD00B7ABE2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				3DE0E3F02E39DC3900B7ABE2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				3DE0E4062E39E50700B7ABE2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3DE0E3792E384EB200B7ABE2 /* Products */;
@@ -356,6 +370,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		3DE0E3F02E39DC3900B7ABE2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.9.0;
+			};
+		};
+		3DE0E4062E39E50700B7ABE2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -363,6 +393,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DE0E3932E384ECD00B7ABE2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		3DE0E3F12E39DC3900B7ABE2 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE0E3F02E39DC3900B7ABE2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		3DE0E3F52E39DC3900B7ABE2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE0E3F02E39DC3900B7ABE2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		3DE0E3F92E39DC3900B7ABE2 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE0E3F02E39DC3900B7ABE2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		3DE0E4072E39E50700B7ABE2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE0E4062E39E50700B7ABE2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
