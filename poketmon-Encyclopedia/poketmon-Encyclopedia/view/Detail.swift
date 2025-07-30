@@ -73,9 +73,9 @@ final class PokemonDetailViewController: UIViewController {
         if let urlStr = pokemon.sprites.front_default, let url = URL(string: urlStr) {
             imageView.kf.setImage(with: url)
         }
-        nameLabel.text = "#\(pokemon.id) \(pokemon.name.capitalized)"
-        typeLabel.text = "Type: \(pokemon.types.map { $0.type.name }.joined(separator: ", "))"
-        heightLabel.text = "Height: \(pokemon.height)cm"
-        weightLabel.text = "Weight: \(pokemon.weight)kg"
+        nameLabel.text = "도감번호\(pokemon.id) \(pokemon.name.capitalized)"
+        typeLabel.text = "타입: \(pokemon.types.map { $0.type.name }.joined(separator: ", "))"
+        heightLabel.text = "키: \(pokemon.height)m"
+        weightLabel.text = "몸무게: \(pokemon.weight)kg"
     }
 }
